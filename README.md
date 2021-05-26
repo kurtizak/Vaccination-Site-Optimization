@@ -13,9 +13,12 @@ User would need to supply and load two datasets to Python Jupyter to run this no
 
 The first, titled the 'Barangay_Centers_Table.xlsx' contains the names of the local government centers, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
 
+![Screenshot](Barangay_Centers_Table.png)
+
 
 The second, titled the 'Vaccination_Centers_Table.xlsx' contains the names of the available vaccination centers to select from, their respective latitudes and longtitudes, and the name of the local government unit it is in.  It must have the following schema:
 
+![Screenshot](Vaccination_Centers_Table.png)
 
 ### Dependencies
 
@@ -33,6 +36,7 @@ results = optimal_covid_sites(n = 2, vaccination_centers_df = 'Vaccination_Cente
 The variable "n" simply denotes the number of covid vaccination centers to be optimized.  If n=2, then it will find the two best centers for the entire region.  There are three choices for distance, namely straightline euclidean distance, road distance, or time traveled distance.  By default we use road distance for the optimization due to its greater realism.
 
 This function will output a dataframe showing the vaccination center assingments of each barangay in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and barangay centers, and the distribution of the barangay areas between the set of optimal covid vaccination centers:
+
 
 
 ## Help
