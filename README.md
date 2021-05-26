@@ -19,13 +19,13 @@ User would need to supply and load two datasets to Python Jupyter to run this no
 
 The first, titled the 'Barangay_Centers_Table.xlsx' contains the names of the local government centers, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
 
-![Screenshot](Barangay_Centers_Table.png)
-
+[<img src="Barangay_Centers_Table.png" width="500"/>](Barangay_Centers_Table.png)
 
 The second, titled the 'Vaccination_Centers_Table.xlsx' contains the names of the available vaccination centers to select from, their respective latitudes and longtitudes, and the name of the local government unit it is in.  It must have the following schema:
 
-![Screenshot](Vaccination_Centers_Table.png)
+[<img src="Vaccination_Centers_Table.png" width="500"/>](Vaccination_Centers_Table.png)
 
+For replication purposes, the two datasets regarding the specific applicaption of the optimiation algorithm for San Juan, Batangas are in this repository,
 ### Dependencies
 
 * The main library used is OSMNX which is the Python API for Open Street Maps
@@ -43,14 +43,15 @@ The variable "n" simply denotes the number of covid vaccination centers to be op
 
 This function will output a dataframe showing the vaccination center assingments of each barangay in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and barangay centers, and the distribution of the barangay areas between the set of optimal covid vaccination centers:
 
-![Screenshot](output.png)
+
+[<img src="output.png" width="500"/>](output.png)
 
 ![Screenshot](2sites_white.png)
 
 
 ## Help
 
-Any advise for common problems or issues, email me at
+For issues and help regarding this repository, you can email me at
 ```
 kaisercabanilla@gmail.com
 ```
