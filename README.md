@@ -8,16 +8,18 @@ Identify the best N covid vaccination centers in a given town or region based on
 
 In this notebook, we show it can applied for the town of San Juan, in the province of Batangas. 
 
-## Getting Started
+## Getting Started 
 
 A Google Colaboratory version of the notebook can be accessed through:
 https://colab.research.google.com/drive/1Dd_odqnrRP_vverLk32BdxxidYfF5EuV?usp=sharing
 
 Alternatively, one can download the covid_site_optimization.py file in this repository.
 
-User would need to supply and load two datasets to Python Jupyter to run this notebook as shown in the paper.  
+Users must find the Open Street Maps (OSM) area code of the region they want to apply the vaccination site optimization on.  For instance, the area code for this example is a simple "San Juan, Batangas, Philippines".
 
-The first, titled the 'Barangay_Centers_Table.xlsx' contains the names of the local government centers, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
+User would then need to supply and load two datasets to Python Jupyter to run this notebook as shown in the paper.  
+
+The first, titled the 'Barangay_Centers_Table.xlsx' contains the names of the local government centers in the given region, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
 
 [<img src="Barangay_Centers_Table.png" width="500"/>](Barangay_Centers_Table.png)
 
@@ -30,7 +32,7 @@ For replication purposes, the two datasets regarding the specific applicaption o
 
 * The main library used is OSMNX which is the Python API for Open Street Maps
 
-### Executing program
+### Executing the program
 The first two cells is just for importing dependencies and for defining the core functions
 
 Let's say we want to find the two most optimal vaccination centers in San Juan, Batangas, Philippines.  We simply run the following function
@@ -40,6 +42,8 @@ results = optimal_covid_sites(n = 2, vaccination_centers_df = 'Vaccination_Cente
                         distance = "road", return_distances = False, plot = True)
 ```
 The variable "n" simply denotes the number of covid vaccination centers to be optimized.  If n=2, then it will find the two best centers for the entire region.  There are three choices for distance, namely straightline euclidean distance, road distance, or time traveled distance.  By default we use road distance for the optimization due to its greater realism.
+
+The region of the analysis must also be supplied in the ```graph area``` variable as a string.
 
 This function will output a dataframe showing the vaccination center assingments of each barangay in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and barangay centers, and the distribution of the barangay areas between the set of optimal covid vaccination centers:
 
