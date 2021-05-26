@@ -4,9 +4,9 @@ Python Jupyter notebook for the paper "Optimal Location of COVID-19 Vaccination 
 ![Screenshot](wow.png)
 ## Description
 
-Identify the best N covid vaccination centers in a given town or region based on the optimization methodology of the paper.  The optimization relies on the proximity of the vaccination sites to the local government centers (barangay halls for the Philippines) and the number of COVID cases and population densities of the barangays.
+Identify the best N covid vaccination centers in a given town or region based on the optimization methodology of the paper.  The optimization relies on the proximity of the vaccination sites to the local government centers (barangay halls for the Philippines) along with the number of COVID cases and population densities within each barangay.
 
-In this notebook, we show it can applied for the town of San Juan, in the province of Batangas. 
+In this notebook, we show how it can applied for the town of San Juan, in the province of Batangas. 
 
 ## Getting Started 
 
