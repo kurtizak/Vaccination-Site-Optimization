@@ -10,6 +10,11 @@ In this notebook, we show it can applied for the town of San Juan, in the provin
 
 ## Getting Started
 
+A Google Colaboratory version of the notebook can be accessed through:
+https://colab.research.google.com/drive/1Dd_odqnrRP_vverLk32BdxxidYfF5EuV?usp=sharing
+
+Alternatively, one can download the covid_site_optimization.py file in this repository.
+
 User would need to supply and load two datasets to Python Jupyter to run this notebook as shown in the paper.  
 
 The first, titled the 'Barangay_Centers_Table.xlsx' contains the names of the local government centers, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
@@ -38,6 +43,7 @@ The variable "n" simply denotes the number of covid vaccination centers to be op
 
 This function will output a dataframe showing the vaccination center assingments of each barangay in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and barangay centers, and the distribution of the barangay areas between the set of optimal covid vaccination centers:
 
+![Screenshot](output.png)
 
 ![Screenshot](2sites_white.png)
 
@@ -48,6 +54,8 @@ Any advise for common problems or issues, email me at
 ```
 kaisercabanilla@gmail.com
 ```
+
+
 
 ## Authors
 Kurt Izak Cabanilla
