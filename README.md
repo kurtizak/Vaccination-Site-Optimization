@@ -1,6 +1,7 @@
 # Covid-Site-Optimization
 Python Jupyter notebook for the paper "Optimal Location of COVID-19 Vaccination Sites" by Cabanilla et al, 2021 which can be found in : INSERT ARXIV LINK
 
+![Screenshot](wow.png)
 ## Description
 
 Identify the best N covid vaccination centers in a given town or region based on the optimization methodology of the paper.  The optimization relies on the proximity of the vaccination sites to the local government centers (barangay halls for the Philippines) and the number of COVID cases and population densities of the barangays.
@@ -37,6 +38,8 @@ The variable "n" simply denotes the number of covid vaccination centers to be op
 
 This function will output a dataframe showing the vaccination center assingments of each barangay in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and barangay centers, and the distribution of the barangay areas between the set of optimal covid vaccination centers:
 
+
+![Screenshot](2sites_white.png)
 
 
 ## Help
