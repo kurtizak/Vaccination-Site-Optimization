@@ -37,14 +37,22 @@ The first two cells is just for importing dependencies and for defining the core
 
 Let's say we want to find the two most optimal vaccination centers in San Juan, Batangas, Philippines.  We simply run the following function
 ```
-assignment = optimal_sites(L = 4, vaccination_centers_df = vacc, villages_df = vill,
+assignment = optimal_sites(L = 2, vaccination_centers_df = vacc, villages_df = vill,
                         graph_area = ("San Juan, Batangas, Philippines"))
 ```
-The variable "L" simply denotes the number of covid vaccination centers to be optimized.  If L=2, then it will find the two best centers for the entire region.  There are three choices for distance, namely straightline euclidean distance, road distance, or time traveled distance.  By default we use road distance for the optimization due to its greater realism.
+The variable "L" simply denotes the number of covid vaccination centers to be optimized.  If L=2, then it will find the two best centers for the entire region.  There are three choices for distance, namely straightline euclidean distance, road distance, or time traveled distance.  By default we use road distance for the optimization due to its greater realism.  
+
+The program by default will find the best vaccination centers using a genetic algorithm to optimize our novel cost function.  If the data is sufficiently small and if L is also small, then one can instead opt to iterate through all possible combinations of vaccination sites to find the best possible site combination. To do this, we simply input a few other arguments. Note that this takes much longer than using the genetic algorithm.
+
+```
+assignment = optimal_sites(L = 2, vaccination_centers_df = vacc, villages_df = vill,
+                        graph_area = ("San Juan, Batangas, Philippines"),  enumerative = True,
+                        distance = "road", plot = True)
+```
 
 The region of the analysis must also be supplied in the ```graph area``` variable as a string.
 
-This function will output a dataframe showing the vaccination center assingments of each barangay in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and barangay centers, and the distribution of the barangay areas between the set of optimal covid vaccination centers:
+This function will output a dataframe showing the vaccination center assingments of each village center in the region.  Furthermore it will print two things, a graph showing the geographic map of the area with the locations of the vaccination centers and village centers, and the distribution of the village areas between the set of optimal covid vaccination centers:
 
 
 [<img src="output.png" width="500"/>](output.png)
