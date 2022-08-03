@@ -1,12 +1,12 @@
-# Covid-Site-Optimization
-Python Jupyter notebook for the paper "Optimal Location of COVID-19 Vaccination Sites" by Cabanilla et al, 2021 which can be found in : INSERT ARXIV LINK
+# Vaccination-Site-Optimization
+Python Jupyter notebook for the paper "Optimal Location of COVID-19 Vaccination Sites" by Cabanilla et al, 2022.
 
 ![Screenshot](wow.png)
 ## Description
 
-Identify the best N covid vaccination centers in a given town or region based on the optimization methodology of the paper.  The optimization relies on the proximity of the vaccination sites to the local government centers (barangay halls for the Philippines) along with the number of COVID cases and population densities within each barangay.
+Identify the best L covid vaccination centers in a given town or region based on the optimization methodology of the paper.  The optimization relies on the proximity of the vaccination sites to the local village centers along with the number of COVID cases and population densities within each barangay.
 
-In this notebook, we show how it can applied for the town of San Juan, in the province of Batangas. 
+In this notebook, we show how it can applied for the town of San Juan, in the province of Batangas, Philippines. 
 
 ## Getting Started 
 
@@ -19,9 +19,9 @@ Users must find the Open Street Maps (OSM) area code of the region they want to 
 
 User would then need to supply and load two datasets to Python Jupyter to run this notebook as shown in the paper.  
 
-The first, titled the 'Barangay_Centers_Table.xlsx' contains the names of the local government centers in the given region, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
+The first, titled the 'Village_Centers_Table.xlsx' contains the names of the local government/village centers in the given region, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
 
-[<img src="Barangay_Centers_Table.png" width="500"/>](Barangay_Centers_Table.png)
+[<img src="Barangay_Centers_Table.png" width="500"/>](Village_Centers_Table.png)
 
 The second, titled the 'Vaccination_Centers_Table.xlsx' contains the names of the available vaccination centers to select from, their respective latitudes and longtitudes, and the name of the local government unit it is in.  It must have the following schema:
 
@@ -37,11 +37,10 @@ The first two cells is just for importing dependencies and for defining the core
 
 Let's say we want to find the two most optimal vaccination centers in San Juan, Batangas, Philippines.  We simply run the following function
 ```
-results = optimal_covid_sites(n = 2, vaccination_centers_df = 'Vaccination_Centers_Table.xlsx', barangays_df = 'Barangay_Centers_Table.xlsx',
-                        graph_area = ("San Juan, Batangas, Philippines"),
-                        distance = "road", return_distances = False, plot = True)
+assignment = optimal_sites(L = 4, vaccination_centers_df = vacc, villages_df = vill,
+                        graph_area = ("San Juan, Batangas, Philippines"))
 ```
-The variable "n" simply denotes the number of covid vaccination centers to be optimized.  If n=2, then it will find the two best centers for the entire region.  There are three choices for distance, namely straightline euclidean distance, road distance, or time traveled distance.  By default we use road distance for the optimization due to its greater realism.
+The variable "L" simply denotes the number of covid vaccination centers to be optimized.  If L=2, then it will find the two best centers for the entire region.  There are three choices for distance, namely straightline euclidean distance, road distance, or time traveled distance.  By default we use road distance for the optimization due to its greater realism.
 
 The region of the analysis must also be supplied in the ```graph area``` variable as a string.
 
@@ -69,6 +68,6 @@ Renier Mendoza
 Vicki Paguio Mendoza
 
 ## Version History
-* 0.1
+* 2
     * Initial Release
 
