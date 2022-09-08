@@ -21,7 +21,7 @@ User would then need to supply and load two datasets to Python Jupyter to run th
 
 The first, titled the 'Village_Centers_Table.xlsx' contains the names of the local government/village centers in the given region, their respective latitudes and longtitudes, total population of its jurisdiction, and the total number of infected in its jurisdiction.  It must have the following schema:
 
-[<img src="Village_Centers_Table.png.png" width="500"/>](Village_Centers_Table.png)
+[<img src="Village_Centers_Table.png.png" width="300"/>](Village_Centers_Table.png)
 
 The second, titled the 'Vaccination_Centers_Table.xlsx' contains the names of the available vaccination centers to select from, their respective latitudes and longtitudes, and the name of the local government unit it is in.  It must have the following schema:
 
